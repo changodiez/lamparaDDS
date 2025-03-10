@@ -1,0 +1,230 @@
+/* Global styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color:#FFFFFF; /* Pastel lilac background */
+    color: #4a4a4a; /* Soft dark gray for text */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 20px;
+    overflow: hidden;
+}
+
+h1 {
+    color: #9D9D9D; /* Soft dark gray for text */
+    font-size: 24px;
+    font-weight: 600;
+     margin-bottom: 10px;
+}
+
+h2 {
+    font-size: 24px;
+    font-weight: 600;
+     margin-bottom: 10px;
+}
+
+.button-container img {
+    width: 100%;
+}
+
+
+.button-container {
+    width: 300px;
+}
+
+#control-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap:20px;
+}
+
+#mode-button {
+    display: flex;
+    flex-direction: row;
+    gap:20px;
+}
+
+/* Container for controls */
+.control-container {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex-wrap: wrap;
+    max-width: 1000px;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Grouping sections for layout */
+.section {
+    background-color: #F7F7F7;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    padding: 10px;
+    border-radius: 30px;
+    width: 100%;
+}
+
+#ordenador {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background-color:#FFFFFF;
+
+    
+}
+
+/* Styling for faders */
+.fader {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    margin-top: 10px;
+    width: 100%;
+}
+
+label {
+    font-size: 14px;
+    color: #4a4a4a;
+}
+
+input[type="range"] {
+    -webkit-appearance: none;
+    width: 550px;
+    height: 15px;
+    border-radius: 5px;
+    outline: none;
+    transition: background 0.3s ease;
+    border: none;
+}
+
+#volume {
+    background: linear-gradient(to right, #00A499 50%, #AEDBD8 50%);  
+}
+
+#brightness {
+    background: linear-gradient(to right, #D9017A 50%, #F2BDDB 50%);  
+
+}
+
+
+input[type="range"]:hover {
+    opacity: 1;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 30px;
+    height: 30px;
+    background: #BBBBBB ;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+input[type="range"]::-webkit-slider-thumb:hover {
+    background: #f8b195; /* Soft peach */
+}
+
+input[type="range"]::-moz-range-thumb {
+    width: 16px;
+    height: 16px;
+    background: #BBBBBB;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+input[type="range"]::-ms-thumb {
+    width: 20px;
+    height: 20px;
+    background: #007bff;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 2px solid #fff;
+     }
+
+/* Styling for buttons */
+button {
+     border: none;
+     height: 120px;
+     background-color: transparent;
+     border-radius: 25px;
+}
+
+button:active {
+   opacity: 65%;
+}
+
+/* Special styling for shutdown and restart buttons */
+button#shutdown, button#restart {
+    margin-top: 30px;
+    height: 100px;
+    background-color: #f8a5ae; /* Pastel coral for danger buttons */
+}
+
+button#shutdown:hover, button#restart:hover {
+    background-color: #f78895; /* Darker pastel coral */
+}
+
+button#shutdown:active, button#restart:active {
+    background-color: #f56d7a; /* Even darker pastel coral */
+}
+
+/* Container for arranging "modo viaje" and "modo standby" side by side */
+.section#mode-buttons {
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+    justify-content: center;
+}
+
+/* Container for buttons below "modo viaje" and "modo standby" */
+.section#control-buttons {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.section#control-fader {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+
+#ampliar{
+   width: 35px;
+   position: absolute;
+   right: 70px;
+   top: 70px;
+}
+
+#connectionStatus{
+    position: absolute;
+    width: 35px;
+    height: 35px;
+    right: 670px;
+   top: 64px;
+   border-radius: 1000px;
+   
+ }
