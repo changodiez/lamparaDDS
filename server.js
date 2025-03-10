@@ -18,7 +18,8 @@ const oscPortIn = 8010;
 const oscClient = new osc.UDPPort({
     localAddress: "0.0.0.0",
     localPort: oscPortIn,
-    remoteAddress: "192.168.0.100",
+    //remoteAddress: "192.168.0.100",
+    remoteAddress: "172.20.15.250",
     remotePort: oscPortOut,
 });
 
@@ -46,7 +47,8 @@ wss.on("connection", (ws) => {
                 address: message.address,
                 args: [{ type: "i", value: message.value }]
             };
-            oscClient.send(oscMessage, "192.168.0.100", oscPortOut);
+            //oscClient.send(oscMessage, "192.168.0.100", oscPortOut);
+            oscClient.send(oscMessage, "172.20.15.250", oscPortOut);            
             console.log(`OSC enviado: ${JSON.stringify(oscMessage)}`);
         }
     });
@@ -92,5 +94,7 @@ oscClient.on("message", (oscMsg) => {
 });
 
 app.listen(PORT, "0.0.0.0", () => {
-    console.log(`Servidor corriendo en http://192.168.0.100:${PORT}`);
+    //console.log(`Servidor corriendo en http://192.168.0.100:${PORT}`);
+    console.log(`Servidor corriendo en http://172.20.15.250:${PORT}`);
+
 });
