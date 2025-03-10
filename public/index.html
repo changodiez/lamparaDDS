@@ -139,6 +139,7 @@
 
         function selectedMode(params) {
             mode = params;
+            selected = params;
             if (mode == "standby") {
                 document.querySelector("#modo-standby img").style.opacity = "1";
                 document.querySelector("#modo-standby img").style.borderStyle = "solid"
@@ -301,11 +302,23 @@
             if (!isPlaying) {
                 document.querySelector("#pause img").style.borderStyle = "solid"
                 document.querySelector("#pause img").style.borderColor = "orange"
-                document.querySelector("#modo-viaje img").style.borderColor = "red"
+                if (selected == "standby") {
+                    document.querySelector("#modo-standby img").style.borderColor = "red"
+                } else if (selected == "viaje") {
+                    document.querySelector("#modo-viaje img").style.borderColor = "red"
+                }
+
 
             } else {
+
+
                 document.querySelector("#pause img").style.borderStyle = "hidden"
-                document.querySelector("#modo-viaje img").style.borderColor = "orange"
+                if (selected == "standby") {
+                    document.querySelector("#modo-standby img").style.borderColor = "orange"
+                } else if (selected == "viaje") {
+                    document.querySelector("#modo-viaje img").style.borderColor = "orange"
+                }
+
             }
             sendOSCMessage('/play', isPlaying);
         }
